@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#203957">
+  <meta name="description" content="برنامه تمرین چهارروزه با کش مقاومتی و وزن بدن">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="برنامه تمرین">
+  <title>برنامه تمرین پدر</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M9 17v14M15 12v24M33 12v24M39 17v14M15 24h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="topbar-text">
+        <h1 id="pageTitle">برنامه تمرین</h1>
+        <p id="pageSub">برنامهٔ هفتگی و آموزش حرکات با کش</p>
+      </div>
+      <button class="back-btn" id="backBtn" type="button" hidden aria-label="بازگشت"><span aria-hidden="true">→</span> بازگشت</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="view" id="viewHome" aria-label="صفحهٔ اول">
+      <h2 class="section-title">کدام بخش را می‌خواهی؟</h2>
+      <div class="home-tiles">
+        <a class="home-tile tile-program" href="#/program">
+          <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="34" height="31" rx="5"/><path d="M7 19h34M16 6v8M32 6v8M15 27h5M15 34h5M27 27h6M27 34h6"/></svg></span>
+          <span class="tile-text"><strong>برنامهٔ هفتگی</strong><span>۴ روز تمرین در هفته با سه سطح راحت‌تر، اصلی و سخت‌تر</span></span>
+          <span class="tile-arrow" aria-hidden="true">←</span>
+        </a>
+        <a class="home-tile tile-bands" href="#/bands">
+          <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 9v9M38 9v9"/><rect x="6" y="6" width="8" height="5" rx="2"/><rect x="34" y="6" width="8" height="5" rx="2"/><path d="M10 18c0 18 28 18 28 0"/></svg></span>
+          <span class="tile-text"><strong>آموزش حرکات با کش</strong><span>حرکات کش برای هر عضله، با تصویر و توضیح قدم‌به‌قدم</span></span>
+          <span class="tile-arrow" aria-hidden="true">←</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="view" id="viewProgram" hidden>
+    <section class="intro-note" aria-label="راهنمای استفاده">
+      <div class="note-icon" aria-hidden="true">✓</div>
+      <div>
+        <h2>چطور از برنامه استفاده کنم؟</h2>
+        <p>روز تمرین را انتخاب کن و برای هر حرکت فقط <strong>یکی</strong> از سه گزینه را انجام بده. برنامه برای <strong>یک کش مقاومتی</strong> و وزن بدن تنظیم شده است. گزینهٔ «اصلی» انتخاب معمول برنامه است؛ اگر خسته‌ای یا مفصلت حساس است، «راحت‌تر» را انتخاب کن.</p>
+        <p class="no-save">نیازی به ثبت تمرین نیست؛ این برنامه چیزی را ذخیره نمی‌کند.</p>
+      </div>
+    </section>
+
+    <section class="day-picker-section" aria-labelledby="dayPickerTitle">
+      <h2 class="section-title" id="dayPickerTitle">انتخاب روز تمرین</h2>
+      <div class="day-picker" id="dayPicker">
+        <button class="day-tab active" type="button" data-day="day1" aria-pressed="true"><span class="day-tab-number">روز ۱</span><span class="day-tab-name">شنبه</span><span class="day-tab-focus">پایین‌تنه A</span></button>
+        <button class="day-tab" type="button" data-day="day2" aria-pressed="false"><span class="day-tab-number">روز ۲</span><span class="day-tab-name">دوشنبه</span><span class="day-tab-focus">بالاتنه A</span></button>
+        <button class="day-tab" type="button" data-day="day3" aria-pressed="false"><span class="day-tab-number">روز ۳</span><span class="day-tab-name">چهارشنبه</span><span class="day-tab-focus">پایین‌تنه B</span></button>
+        <button class="day-tab" type="button" data-day="day4" aria-pressed="false"><span class="day-tab-number">روز ۴</span><span class="day-tab-name">جمعه</span><span class="day-tab-focus">بالاتنه B</span></button>
+      </div>
+    </section>
+
+    <section id="dayContent" aria-live="polite"></section>
+
+    <section class="safety-card" aria-labelledby="safetyTitle">
+      <h2 id="safetyTitle"><span aria-hidden="true">!</span> چند نکتهٔ مهم</h2>
+      <ul>
+        <li>قبل از تمرین ۵ تا ۱۰ دقیقه آرام راه برو و حرکت‌ها را بدون فشار انجام بده.</li>
+        <li>در هفتهٔ اول و دوم، بیشتر حرکت‌ها را با ۲ ست شروع کن.</li>
+        <li>حرکت سخت‌تر را فقط وقتی انتخاب کن که نسخهٔ اصلی در دو جلسهٔ پیاپی راحت بوده و تا روز بعد درد یا خشکی را بیشتر نکرده باشد.</li>
+        <li>اگر مفصل گرم یا متورم است، تمرین سنگین آن ناحیه را انجام نده. در صورت درد تیز، بی‌حسی، سرگیجه، درد قفسهٔ سینه یا تنگی نفس غیرعادی، تمرین را متوقف کن.</li>
+      </ul>
+      <p class="medical-note">به‌دلیل نامشخص بودن نوع روماتیسم و داروها، بهتر است محدودیت‌های تمرین با پزشک یا فیزیوتراپیست هماهنگ شود.</p>
+    </section>
+
+    <p class="rest-note">روزهای بین تمرین قدرتی، پیاده‌روی یا دویدن سبک فقط در صورتی مناسب است که درد، تورم یا خشکی مفاصل را بیشتر نکند.</p>
+    </section>
+
+    <section class="view" id="viewBands" hidden>
+      <section class="intro-note" aria-label="دربارهٔ این بخش">
+        <div class="note-icon" aria-hidden="true">i</div>
+        <div>
+          <h2>آموزش حرکات با کش</h2>
+          <p>عضله‌ای را که می‌خواهی تمرین بدهی انتخاب کن تا حرکات کش مخصوص آن را با تصویر <strong>شروع و پایان</strong> و توضیح قدم‌به‌قدم ببینی.</p>
+        </div>
+      </section>
+      <h2 class="section-title part-title">انتخاب عضله</h2>
+      <div class="part-grid" id="partGrid"></div>
+      <details class="warmup band-rules">
+        <summary>نکته‌های ایمنی کار با کش</summary>
+        <ul>
+          <li>قبل از هر جلسه کش را از نظر پارگی، ترک یا نازک شدن بررسی کن؛ کش آسیب‌دیده را کنار بگذار.</li>
+          <li>اگر کش را به در می‌بندی، در را ببند و قفل کن و از سمتی بکش که در باز نشود (سمت لولا).</li>
+          <li>کش را هیچ‌وقت ناگهانی رها نکن؛ برگشت را آهسته‌تر از کشیدن انجام بده.</li>
+          <li>شدت کش را طوری انتخاب کن که دو تکرار آخر سخت باشد اما حرکت هنوز درست انجام شود.</li>
+          <li>نفس را نگه ندار؛ هنگام کشیدن یا هل دادن بازدم کن.</li>
+          <li>برای هر عضله فقط ۲ تا ۳ حرکت در یک جلسه کافی است.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="view" id="viewPart" hidden>
+      <div id="partContent" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">برنامهٔ تمرینی چهارروزه · بخشی از تصاویر حرکات: Exercise data by <a href="https://repdb.co" rel="nofollow">RepDB (repdb.co)</a> · تصاویر سه‌بعدی: © <a href="https://gymvisual.com/" rel="nofollow">Gym visual</a> · عکس‌ها: <a href="https://github.com/yuhonas/free-exercise-db" rel="nofollow">free-exercise-db</a> · بقیهٔ تصاویر اختصاصی همین برنامه</footer>
+  <script src="library.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
